@@ -4,8 +4,8 @@ session_start();
 
 $name     = "";
 $kana     = "";
-$email    = "";
-$phone    = "";
+$mail     = "";
+$tel      = "";
 $inquiry  = "";
 $mapNone  = TRUE;
 
@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
    $isValidated = TRUE;
    $mapNone = FALSE;
+
    $name     = $_POST["name"];
    $kana     = $_POST["kana"];
    $mail     = $_POST["mail"];
@@ -41,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $isValidated = FALSE;
    }
    elseif(!preg_match("/^[ァ-ヶ－ 　]+$/u", $kana)) {
-   $kanaError = "※フリガナの形式が正しくありません";
+   $kanaError = "※全角カタカナで入力してください";
    $isValidated = FALSE;
    }
    if ($mail === "") {
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    $mailError = "※メールアドレスの形式が正しくありません";
    $isValidated = FALSE;
    }
-     if ($inquiry === "") {
+   if ($inquiry === "") {
    $inquiryError = "※お問い合わせ内容を入力してください";
    $isValidated = FALSE;
    }
@@ -71,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $_SESSION["contact"] = $contact;
     header("Location: contact_conf.php");
+    exit;
    }
 }
  ?>

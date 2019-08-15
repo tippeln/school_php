@@ -1,23 +1,28 @@
 <?php
+session_start();
+
 require_once "admin/util.inc.php";
 require_once "libs/qd/qdsmtp.php";
 require_once "libs/qd/qdmail.php";
-session_start();
+
 
 if (isset($_SESSION["contact"])) {
- $contact = $_SESSION["contact"];
- $name    = $contact["name"];
- $kana    = $contact["kana"];
- $mail    = $contact["mail"];
- $tel     = $contact["tel"];
- $inquiry = $contact["inquiry"];
- $token   = $contact["token"];
+   $contact = $_SESSION["contact"];
+   $name    = $contact["name"];
+   $kana    = $contact["kana"];
+   $mail    = $contact["mail"];
+   $tel     = $contact["tel"];
+   $inquiry = $contact["inquiry"];
+   $token   = $contact["token"];
 }
-if ($_POST[send] == "send") {
+
 if($token !== getToken()) {
-exit('処理を正常に完了できませんでした');
-header("Location:contact.php");
+  exit('処理を正常に完了できませんでした');
+  header("Location:contact.php");
+  exit;
 }
+
+if ($_POST[send] == "send") {
 
 $body = <<<EOT
 ■お名前
@@ -58,13 +63,16 @@ $flag = $mail->send();
 if($flag == TRUE){//もし送信に成功したならば
     unset($_SESSION["contact"]);//セッション変数を破棄
     header("Location: contact_done.php");
+    exit;
 }
 else{//送信失敗した場合は、セッション変数はそのままで
    header("Location: contact_error.php");
+  exit;
 }
 
 } elseif ($_POST[back] == "back") {
    header("Location: contact.php");
+   exit;
 }
 ?>
 <!DOCTYPE html>
