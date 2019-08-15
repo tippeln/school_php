@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="&apos;index.php&apos; を &apos;php02&apos; に移動" description="&apos;index.php&apos; を &apos;php02&apos; に移動" destination="php02" element1="php.01/index.php" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1562899534028" updateReferences="true"/>
+</session>

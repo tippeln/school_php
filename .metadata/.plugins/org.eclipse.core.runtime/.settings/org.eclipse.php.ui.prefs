@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+org.eclipse.php.core.workspaceDefaultLocale=ja_JP
+org.eclipse.php.ui.editor.templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="false" context\="php-statements" deleted\="true" description\="\u6587\u5B57\u5217\u306E echo" enabled\="false" id\="org.eclipse.php.ui.editor.templates.php.echo" name\="eco">echo("${}");\r\n${cursor}</template><template autoinsert\="true" context\="php" deleted\="false" description\="" enabled\="true" name\="dump">echo "&lt;pre&gt;";&\#13;\r\nvar_dump(${cursor});&\#13;\r\necho "&lt;/pre&gt;";</template><template autoinsert\="false" context\="php-statements" deleted\="false" description\="\u6587\u5B57\u5217\u306E echo" enabled\="true" name\="ec">echo ("${}");\r\n${cursor}</template></templates>
+phpManualSite=PHP.net ja\u0005http\://www.php.net/manual/ja\u0005php
+phpManualSites=PHP.net ja\u0005http\://www.php.net/manual/ja\u0005php
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.ConstantHighlighting.italic=false
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.FunctionHighlighting.italic=false
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.StaticFieldHighlighting.italic=false
+semanticHighlighting.org.eclipse.php.internal.ui.editor.highlighters.StaticMethodHighlighting.italic=false
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true
